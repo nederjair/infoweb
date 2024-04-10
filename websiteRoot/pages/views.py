@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Page
-#from django.http import HttpResponse
 
-# Create your views here.
 def index(request, pagename):
     pagename = '/' + pagename
     pg = Page.objects.get(permalink=pagename)
@@ -12,9 +10,9 @@ def index(request, pagename):
         'last_updated': pg.update_date,
         'page_list': Page.objects.all(),
         }
-    return render(request, 'pages/page.html', context)
+    return render(request, 'pages/home.html', context)
 
-def contact(request, pagename):
+def contacts(request, pagename):
     pagename = '/' + pagename
     pg = Page.objects.get(permalink=pagename)
     context = {
@@ -23,4 +21,4 @@ def contact(request, pagename):
         'last_updated': pg.update_date,
         'page_list': Page.objects.all(),
         }
-    return render(request, 'pages/contacts.html', context)
+    return render(request, 'pages/contact.html', context)
