@@ -9,6 +9,6 @@ pyvenv.cfg
 **__pycache__/
 **wsgi.py
 **manage.py
-**apps.py
 **asgi.py
 **db.sqlite3
+**media/

@@ -2,9 +2,10 @@
 
 # Start a new detached tmux session named GFG_Session
 tmux new-session -d -s django
-tmux send-keys -t django:1 'cd ~/pypro/infoweb/ && source bin/activate && cd websiteRoot'
+tmux send-keys -t django:1 'cd ~/pypro/infoweb/websiteRoot/ && nvim'
 #create a new window in the django session
-tmux new-window -t django:2  'cd ~/pypro/infoweb/websiteRoot/ && nvim'
+tmux new-window -t django:2
+tmux send-keys -t django:2 'cd ~/pypro/infoweb/ && source bin/activate && cd websiteRoot'
 #tmux new-window -t django:2  'nvim ~/django_project/manuals/manualsEnv/websiteRoot/pages/templates/pages/page.html'
 #tmux new-window -t django:3  'nvim ~/django_project/manuals/manualsEnv/websiteRoot/pages/models.py'
 #tmux new-window -t django:4  'nvim ~/django_project/manuals/manualsEnv/websiteRoot/pages/views.py'
