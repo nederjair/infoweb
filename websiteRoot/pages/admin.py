@@ -8,4 +8,11 @@ class PageAdmin(admin.ModelAdmin):
     ordering = ('title',)
     search_fields = ('title',)
 models_to_register = [Page, Contact]
-admin.site.register(models_to_register, PageAdmin)
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name','departament')
+    ordering = ('name',)
+    search_fields = ('charge',)
+models_to_register = [Page, Contact]
+admin.site.register(Page, PageAdmin)
+admin.site.register(Contact, ContactAdmin)

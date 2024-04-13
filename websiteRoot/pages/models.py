@@ -21,6 +21,7 @@ class Contact(models.Model):
     charge = models.CharField('charge', max_length=60)
     departament = models.CharField('departament', max_length=60)
     description = models.TextField('about yourself', blank=True)
+    social = models.URLField('social network', default='https://vk.com/')
 
     def __str__(self):
         return self.name

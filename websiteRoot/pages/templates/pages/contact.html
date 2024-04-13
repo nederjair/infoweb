@@ -14,8 +14,18 @@
 
 
 {% block content %}
-
-{% autoescape off %}
-{{ content }}
-{% endautoescape %}
+    {% for contact in contact_list %}
+    <div class="col"> 
+<div class="card" style="width: 18rem;">
+      <img src="{% if contact.image %}{{ contact.image.url }}{% else %}{% static 'img/no_image.svg' %}{% endif %}" class="card-img-top"  alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ contact.name }}</h5>
+    <p class="card-text">{{ contact.charge }}</p>
+    <p class="card-text">{{ contact.departament }}</p>
+    <p class="card-text">{{ contact.description }}</p>
+    <a href="{{ contact.social }}" class="btn btn-primary">Go to my social networks</a>
+  </div>
+</div>
+</div>
+    {% endfor %}
 {% endblock content %}

@@ -16,8 +16,8 @@
 
     <body>
 <!--main container-->
-      <div class="container-fluid">
-        <div class="row text-center">
+      <div class="container-fluid text-center">
+        <div class="row justify-content-between">
 <!--navigation bar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" >
   <div class="container-fluid">
@@ -45,7 +45,7 @@
 </nav>
 
       </div> <!--end of the first row-->
-        <div class="row text-center">      <!--second row-->
+        <div class="row justify-content-center">      <!--second row-->
 {% block content %} {% autoescape off %}  {% endautoescape %}{% endblock content %}
       </div> <!--end of the second row-->
         <div class="row align-items-end">      <!--third row-->
